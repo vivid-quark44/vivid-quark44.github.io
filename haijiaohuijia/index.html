@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海角回家入口-回家入口地址发布页_稳定访问路径</title>
+<meta name="description" content="海角回家入口地址发布页，汇总可用访问路径与常见问题，帮助你在地址变动后快速找到海角回家入口并正常打开页面。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1f2a'/%3E%3Cpath d='M14 40 L32 16 L50 40 Z' fill='%233fb0a3'/%3E%3Crect x='26' y='38' width='12' height='14' rx='2' fill='%23e8b45c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#0b1f2a;
+  --ink-2:#12303d;
+  --sea:#3fb0a3;
+  --sea-dark:#2b8479;
+  --sand:#e8b45c;
+  --paper:#f6f4ef;
+  --card:#ffffff;
+  --line:#dfe3e0;
+  --text:#25333a;
+  --muted:#5f7178;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:var(--paper);
+  color:var(--text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+.wrap{width:min(1120px,92vw);margin:0 auto;}
+
+/* 页头 */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,31,42,.96);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:12px 0;
+}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;}
+.brand svg{width:34px;height:34px;flex:none;}
+.brand .brand-text{
+  font-size:17px;font-weight:700;letter-spacing:.5px;white-space:nowrap;
+}
+.nav-links{display:flex;gap:22px;font-size:14.5px;color:#cfe2df;}
+.nav-links a{padding:4px 0;border-bottom:2px solid transparent;transition:.2s;}
+.nav-links a:hover{color:#fff;border-bottom-color:var(--sea);}
+.nav-cta{
+  background:var(--sea);color:#062b28;font-weight:700;font-size:14px;
+  padding:8px 16px;border-radius:999px;white-space:nowrap;transition:.2s;
+}
+.nav-cta:hover{background:#57c7b9;}
+@media(max-width:820px){
+  .nav-links{display:none;}
+}
+
+/* 首屏 */
+.hero{
+  background:
+    radial-gradient(900px 380px at 80% -10%,rgba(63,176,163,.28),transparent 70%),
+    linear-gradient(160deg,#0b1f2a 0%,#12303d 62%,#173f46 100%);
+  color:#fff;
+  padding:56px 0 64px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:auto 0 0 0;height:70px;
+  background:linear-gradient(180deg,transparent,var(--paper));
+  pointer-events:none;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:#bfe6e0;background:rgba(63,176,163,.16);
+  border:1px solid rgba(63,176,163,.35);
+  padding:5px 12px;border-radius:999px;margin-bottom:18px;
+}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--sand);}
+h1{
+  font-size:clamp(28px,4.4vw,44px);
+  line-height:1.22;font-weight:800;letter-spacing:.5px;
+  margin-bottom:16px;
+}
+.hero p.lead{
+  font-size:16px;color:#cbdcd9;max-width:36em;margin-bottom:26px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--sand);color:#3a2606;font-weight:800;font-size:15.5px;
+  padding:13px 26px;border-radius:999px;transition:.2s;
+  box-shadow:0 8px 24px rgba(232,180,92,.28);
+}
+.btn-primary:hover{background:#f3c877;transform:translateY(-1px);}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid rgba(255,255,255,.35);color:#eaf5f2;
+  padding:12px 22px;border-radius:999px;font-size:15px;transition:.2s;
+}
+.btn-ghost:hover{background:rgba(255,255,255,.08);}
+.hero-note{font-size:13px;color:#9fb8b5;margin-top:16px;}
+
+.hero-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:20px;padding:22px;
+  backdrop-filter:blur(4px);
+}
+.hero-card h2{
+  font-size:14px;font-weight:600;color:#bfe6e0;letter-spacing:1px;
+  margin-bottom:14px;
+}
+.route{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;padding:11px 14px;margin-bottom:10px;
+}
+.route:last-child{margin-bottom:0;}
+.route .name{font-size:14.5px;color:#e7f3f1;}
+.route .tag{
+  font-size:12px;padding:2px 9px;border-radius:999px;
+  background:rgba(63,176,163,.2);color:#8fe0d3;border:1px solid rgba(63,176,163,.35);
+  white-space:nowrap;
+}
+.route .tag.warn{background:rgba(232,180,92,.16);color:#f0cc8d;border-color:rgba(232,180,92,.35);}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px;}
+  .hero{padding:38px 0 54px;}
+}
+
+/* 通用区块 */
+section{padding:56px 0;}
+.section-head{max-width:44em;margin-bottom:30px;}
+.section-head .kicker{
+  font-size:13px;font-weight:700;letter-spacing:2px;color:var(--sea-dark);
+  text-transform:uppercase;margin-bottom:8px;
+}
+.section-head h2{
+  font-size:clamp(21px,2.6vw,27px);font-weight:800;color:var(--ink);
+  line-height:1.35;margin-bottom:10px;
+}
+.section-head p{color:var(--muted);font-size:15px;}
+
+/* 入口卡片区 */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr;}}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;transition:.2s;display:flex;flex-direction:column;gap:10px;
+}
+.card:hover{border-color:#bcd9d4;box-shadow:0 10px 26px rgba(11,31,42,.07);}
+.card .icon{
+  width:40px;height:40px;border-radius:10px;display:grid;place-items:center;
+  background:rgba(63,176,163,.12);color:var(--sea-dark);
+}
+.card h3{font-size:17px;font-weight:700;color:var(--ink);}
+.card p{font-size:14.5px;color:var(--muted);flex:1;}
+.card .card-link{
+  font-size:14px;font-weight:700;color:var(--sea-dark);display:inline-flex;align-items:center;gap:6px;
+}
+.card .card-link:hover{color:var(--ink);}
+
+/* 使用步骤 */
+.steps{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.step-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step;}
+@media(max-width:900px){.step-list{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.step-list{grid-template-columns:1fr;}}
+.step{
+  background:var(--paper);border-radius:var(--radius);padding:20px;
+  border:1px solid var(--line);
+}
+.step .num{
+  display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;
+  background:var(--ink);color:#fff;font-size:14px;font-weight:700;margin-bottom:12px;
+}
+.step h3{font-size:15.5px;color:var(--ink);margin-bottom:6px;font-weight:700;}
+.step p{font-size:14px;color:var(--muted);}
+
+/* 正文双栏 */
+.two-col{display:grid;grid-template-columns:1.6fr 1fr;gap:34px;align-items:start;}
+@media(max-width:920px){.two-col{grid-template-columns:1fr;}}
+.prose h3{font-size:18px;color:var(--ink);margin:22px 0 8px;font-weight:700;}
+.prose h3:first-child{margin-top:0;}
+.prose p{font-size:15.5px;color:#374a52;margin-bottom:12px;}
+.prose strong{color:var(--ink);}
+.aside{
+  background:var(--ink);color:#dce9e7;border-radius:18px;padding:24px;
+  position:sticky;top:84px;
+}
+.aside h3{font-size:16px;color:#fff;margin-bottom:12px;}
+.aside ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.aside li{font-size:14px;line-height:1.6;padding-left:18px;position:relative;color:#c2d4d1;}
+.aside li::before{
+  content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:2px;
+  background:var(--sand);transform:rotate(45deg);
+}
+.aside .aside-foot{
+  margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);
+  font-size:13px;color:#9fb8b5;
+}
+
+/* 问答 */
+.faq{background:#fff;border-top:1px solid var(--line);}
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:820px;}
+details.qa{
+  background:var(--paper);border:1px solid var(--line);border-radius:12px;
+  padding:16px 20px;
+}
+details.qa summary{
+  cursor:pointer;font-weight:700;color:var(--ink);font-size:15.5px;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+details.qa summary::-webkit-details-marker{display:none;}
+details.qa summary::after{
+  content:"+";font-weight:400;color:var(--sea-dark);font-size:20px;line-height:1;
+}
+details.qa[open] summary::after{content:"–";}
+details.qa p{font-size:14.5px;color:var(--muted);margin-top:10px;}
+
+/* 更新条 */
+.update-bar{
+  background:linear-gradient(120deg,#12303d,#0b1f2a);
+  color:#e6f2f0;border-radius:18px;padding:26px 28px;
+  display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;
+}
+.update-bar h3{font-size:18px;color:#fff;margin-bottom:4px;}
+.update-bar p{font-size:14px;color:#a8c2bf;}
+.update-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.btn-download{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--sand);color:#3a2606;font-weight:800;
+  padding:11px 22px;border-radius:999px;font-size:14.5px;
+  pointer-events:none;
+}
+
+/* 页尾 */
+footer.site{
+  background:var(--ink);color:#9fb8b5;padding:40px 0 28px;margin-top:20px;
+}
+.foot-grid{
+  display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;
+  padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.1);
+}
+.foot-brand{max-width:30em;}
+.foot-brand .brand{margin-bottom:10px;}
+.foot-brand p{font-size:13.5px;line-height:1.7;color:#8fa8a5;}
+.foot-links{display:flex;gap:40px;flex-wrap:wrap;}
+.foot-col h4{font-size:13px;color:#dbeae8;letter-spacing:1px;margin-bottom:10px;}
+.foot-col a{display:block;font-size:13.5px;color:#9fb8b5;margin-bottom:7px;transition:.2s;}
+.foot-col a:hover{color:#fff;}
+.foot-bottom{
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;
+  padding-top:18px;font-size:12.5px;color:#78918e;
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="海角回家入口">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#12303d"/>
+        <path d="M14 40 L32 16 L50 40 Z" fill="#3fb0a3"/>
+        <rect x="26" y="38" width="12" height="14" rx="2" fill="#e8b45c"/>
+      </svg>
+      <span class="brand-text">海角回家入口</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#routes">入口路径</a>
+      <a href="#steps">打开步骤</a>
+      <a href="#detail">地址说明</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="nav-cta" href="#routes">查看入口</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>地址发布页 · 路径随时更新</span>
+        <h1>海角回家入口</h1>
+        <p class="lead">海角回家入口用于在访问地址发生变化后，重新找到可用的打开路径。本页集中列出常用入口形式、打开步骤与常见问题，方便你先看清结构，再选择合适的方式进入。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#routes">进入入口路径
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn-ghost" href="#steps">了解打开步骤</a>
+        </div>
+        <p class="hero-note">地址可能随网络环境变化，请以本页当前展示的路径为准。</p>
+      </div>
+
+      <aside class="hero-card" aria-label="入口状态概览">
+        <h2>当前路径概览</h2>
+        <div class="route">
+          <span class="name">主入口路径</span>
+          <span class="tag">可用</span>
+        </div>
+        <div class="route">
+          <span class="name">备用入口路径</span>
+          <span class="tag">可用</span>
+        </div>
+        <div class="route">
+          <span class="name">历史地址</span>
+          <span class="tag warn">建议弃用</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="routes">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Routes</div>
+        <h2>三种常见进入方式</h2>
+        <p>不同网络状况下，海角回家入口的可用表现并不相同。下面三种方式覆盖大多数场景，可按顺序尝试。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M4 12v6a2 2 0 0 0 2 2h2"/><path d="M20 12v6a2 2 0 0 1-2 2h-2"/></svg>
+          </div>
+          <h3>直接打开主入口</h3>
+          <p>在浏览器地址栏输入本页展示的主入口地址，适合网络通畅、DNS 解析正常的情况，通常是最快的一条路径。</p>
+          <a class="card-link" href="#steps">查看步骤 →</a>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 20h16"/></svg>
+          </div>
+          <h3>切换备用入口</h3>
+          <p>主入口加载缓慢或无法打开时，改用备用入口，绕过单一线路的解析问题，是海角回家入口最常用的补救方式。</p>
+          <a class="card-link" href="#steps">查看步骤 →</a>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <h3>通过发布页找回</h3>
+          <p>旧地址失效后，回到本发布页核对最新路径，再复制到浏览器中打开，避免使用来源不明的跳转链接。</p>
+          <a class="card-link" href="#faq">查看说明 →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="steps" class="steps">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Steps</div>
+        <h2>从打开到进入的四步</h2>
+        <p>把操作拆成清晰步骤，可以减少反复试错。以下流程适用于大多数设备与浏览器。</p>
+      </div>
+      <div class="step-list">
+        <div class="step">
+          <span class="num">1</span>
+          <h3>核对当前地址</h3>
+          <p>先确认本页展示的地址是否为最新版本，不要沿用收藏夹中过期的旧链接。</p>
+        </div>
+        <div class="step">
+          <span class="num">2</span>
+          <h3>复制完整链接</h3>
+          <p>完整复制包含协议头的地址，避免手动输入时漏字或把字母大小写写错。</p>
+        </div>
+        <div class="step">
+          <span class="num">3</span>
+          <h3>在浏览器中打开</h3>
+          <p>粘贴到浏览器地址栏并回车，等待页面加载完成，不要中途重复刷新。</p>
+        </div>
+        <div class="step">
+          <span class="num">4</span>
+          <h3>失败则换备用</h3>
+          <p>若长时间无响应，返回本页改用备用入口，必要时更换网络环境后再试。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="detail">
+    <div class="wrap two-col">
+      <div class="prose">
+        <h3>海角回家入口为什么会变化</h3>
+        <p>访问地址并非永久固定。域名解析、线路调整或网络环境的差异，都可能让原来的链接暂时打不开。因此，<strong>海角回家入口</strong>更像是一个“找回路径”的入口：它不承诺某一条地址长期有效，而是把当前可用的路径集中展示，让你在旧链接失效时仍有明确方向。</p>
+        <p>理解这一点后，使用方式就变得简单：把本页当作起点，而不是把某个链接当作唯一的门。当你发现收藏的地址无法访问时，先回到这里核对，再选择主入口或备用入口。</p>
+
+        <h3>主入口与备用入口的区别</h3>
+        <p>主入口通常解析更快、加载更稳定，适合日常使用；备用入口则用于在主入口受阻时接替，二者指向同一目标内容，只是线路不同。选择时不必纠结“哪个更好”，而应按当前网络的实际情况判断：能打开的那个，就是合适的那个。</p>
+        <p>如果两条路径都迟迟没有响应，问题往往不在入口本身，而在本地网络。此时可以尝试切换 Wi-Fi 与移动数据，或稍等片刻再重试，而不是连续刷新同一个地址。</p>
+
+        <h3>使用时的几点提醒</h3>
+        <p>第一，不要轻信来源不明的“加速链接”或第三方跳转页，它们可能把你带到与主题无关的页面。第二，复制地址时保留完整字符，避免因截断导致打开失败。第三，遇到页面提示异常时，先记录下当时的网络环境，再换一条路径验证，这样更容易判断问题出在哪一环。</p>
+        <p>海角回家入口的价值在于“确定性”：它把分散的路径收拢到一页，让你不必凭记忆猜测。只要按上面的顺序核对与尝试，大多数访问问题都能在几分钟内定位。</p>
+      </div>
+
+      <aside class="aside">
+        <h3>快速核对清单</h3>
+        <ul>
+          <li>地址是否来自本发布页，而非聊天记录或陌生链接</li>
+          <li>链接是否完整复制，协议头与路径都没有缺漏</li>
+          <li>浏览器是否为较新版本，缓存是否清理过</li>
+          <li>是否尝试过切换网络或更换备用入口</li>
+        </ul>
+        <div class="aside-foot">清单用于自查，不涉及任何账号或个人信息填写。</div>
+      </aside>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="update-bar">
+        <div>
+          <h3>入口路径更新提示</h3>
+          <p>路径调整后，本页会同步展示新的打开方式。可先保存本页地址，便于下次直接回到海角回家入口核对。</p>
+        </div>
+        <div class="update-actions">
+          <a class="btn-primary" href="#routes">回到入口路径</a>
+          <a class="btn-download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 20h16"/></svg>
+            下载
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">FAQ</div>
+        <h2>常见问题</h2>
+        <p>关于海角回家入口的路径、打开方式与异常处理，集中回答如下。</p>
+      </div>
+      <div class="faq-list">
+        <details class="qa" open>
+          <summary>海角回家入口打不开怎么办？</summary>
+          <p>先确认地址是否为本页展示的最新版本，再尝试备用入口。若仍无响应，可切换网络环境后重试，或稍等一段时间再访问。</p>
+        </details>
+        <details class="qa">
+          <summary>主入口和备用入口内容一样吗？</summary>
+          <p>两者指向相同目标，区别在于线路与解析方式。日常优先使用主入口，受阻时改用备用入口即可，无需同时打开。</p>
+        </details>
+        <details class="qa">
+          <summary>为什么旧链接会失效？</summary>
+          <p>地址可能因解析调整或线路变化而暂时不可用。旧链接失效并不代表内容消失，回到本发布页核对当前路径即可。</p>
+        </details>
+        <details class="qa">
+          <summary>需要填写账号或个人信息吗？</summary>
+          <p>本页仅提供路径说明与入口指引，不要求填写账号、密码或任何身份信息。遇到索要信息的页面，请先核实来源。</p>
+        </details>
+        <details class="qa">
+          <summary>手机上也能正常打开吗？</summary>
+          <p>可以。步骤与桌面端一致：复制完整地址，粘贴到手机浏览器地址栏打开；若加载缓慢，优先尝试备用入口。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <svg viewBox="0 0 64 64" width="30" height="30" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#12303d"/>
+            <path d="M14 40 L32 16 L50 40 Z" fill="#3fb0a3"/>
+            <rect x="26" y="38" width="12" height="14" rx="2" fill="#e8b45c"/>
+          </svg>
+          <span class="brand-text">海角回家入口</span>
+        </div>
+        <p>海角回家入口地址发布页，集中展示当前可用的打开路径与使用说明，帮助你在地址变化后快速找回方向。</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>页面导航</h4>
+          <a href="#routes">入口路径</a>
+          <a href="#steps">打开步骤</a>
+          <a href="#detail">地址说明</a>
+          <a href="#faq">常见问题</a>
+        </div>
+        <div class="foot-col">
+          <h4>相关入口</h4>
+          <a href="#routes">主入口路径</a>
+          <a href="#routes">备用入口路径</a>
+          <a href="#top">回到顶部</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 海角回家入口 · 地址发布页</span>
+      <span>路径信息以本页当前展示为准</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
