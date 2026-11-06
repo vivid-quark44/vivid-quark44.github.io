@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日乱斗官网-乱斗每日更新_每日乱斗玩法速览</title>
+<meta name="description" content="每日乱斗官网首页，汇总每日乱斗的最新动态、玩法速览与热点合辑，帮助玩家快速了解今日乱斗看点与更新节奏。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23161b2e'/%3E%3Cpath d='M32 10l6 14 15 2-11 10 3 15-13-8-13 8 3-15-11-10 15-2z' fill='%23ffb648'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#151a2b;
+  --ink-2:#232a44;
+  --paper:#f6f4ef;
+  --card:#ffffff;
+  --gold:#ffb648;
+  --coral:#ff6b57;
+  --teal:#2fb8a8;
+  --line:#e4e0d6;
+  --muted:#5d6478;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(21,26,43,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav{
+  display:flex;align-items:center;gap:22px;
+  height:66px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#fff;font-size:17px;letter-spacing:.5px;white-space:nowrap}
+.brand .mark{width:30px;height:30px;flex:none}
+.nav ul{display:flex;gap:6px;list-style:none;margin-left:auto}
+.nav ul a{
+  display:block;padding:8px 13px;border-radius:999px;
+  color:#c9cfe0;font-size:14.5px;transition:.2s;
+}
+.nav ul a:hover{background:rgba(255,255,255,.1);color:#fff}
+.nav .cta{
+  background:var(--gold);color:#1a1408;font-weight:700;
+  padding:9px 18px;border-radius:999px;font-size:14.5px;
+}
+.nav .cta:hover{background:#ffc86b}
+
+/* hero */
+.hero{
+  background:
+    radial-gradient(circle at 85% 20%, rgba(255,107,87,.28), transparent 45%),
+    radial-gradient(circle at 12% 80%, rgba(47,184,168,.22), transparent 45%),
+    linear-gradient(160deg,#161b2e 0%,#1e2540 60%,#232b4a 100%);
+  color:#fff;padding:64px 0 72px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-80px;top:-60px;width:340px;height:340px;
+  border-radius:50%;border:1px dashed rgba(255,255,255,.14);
+}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:52px;align-items:center;position:relative;z-index:2}
+.tagline{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;letter-spacing:1.5px;color:var(--gold);
+  border:1px solid rgba(255,182,72,.45);border-radius:999px;
+  padding:5px 14px;margin-bottom:20px;
+}
+.tagline .dot{width:7px;height:7px;border-radius:50%;background:var(--coral);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-size:clamp(30px,4.4vw,50px);line-height:1.2;font-weight:900;letter-spacing:1px}
+h1 .hl{color:var(--gold)}
+.hero p.lead{margin-top:18px;font-size:16.5px;color:#c7cee2;max-width:46ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;font-weight:700;font-size:15px;
+  transition:.2s;border:1px solid transparent;
+}
+.btn.primary{background:var(--gold);color:#1a1408}
+.btn.primary:hover{background:#ffc86b;transform:translateY(-1px)}
+.btn.ghost{border-color:rgba(255,255,255,.3);color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+.btn[aria-disabled="true"]{opacity:.85;cursor:not-allowed}
+.hero-stats{display:flex;gap:34px;margin-top:36px;flex-wrap:wrap}
+.hero-stats div span{display:block;font-size:26px;font-weight:900;color:var(--gold);line-height:1.2}
+.hero-stats div small{font-size:13px;color:#9ea8c3}
+.hero-art{position:relative;display:flex;justify-content:center}
+.hero-art .ring{
+  position:absolute;inset:auto;width:250px;height:250px;border-radius:50%;
+  border:2px solid rgba(255,182,72,.35);animation:spin 22s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* section base */
+section{padding:64px 0}
+.sec-head{margin-bottom:34px}
+.sec-head .kicker{
+  font-size:13px;letter-spacing:2px;color:var(--coral);font-weight:700;
+  text-transform:uppercase;display:block;margin-bottom:8px;
+}
+.sec-head h2{font-size:clamp(22px,2.6vw,30px);font-weight:900;letter-spacing:.5px}
+.sec-head p{color:var(--muted);margin-top:10px;max-width:62ch;font-size:15.5px}
+
+/* today cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:18px;
+  padding:24px;transition:.25s;display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(21,26,43,.09);border-color:#d4cebd}
+.card .ico{
+  width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+  background:rgba(255,182,72,.16);margin-bottom:16px;
+}
+.card h3{font-size:17.5px;font-weight:800;margin-bottom:8px}
+.card p{font-size:14.5px;color:var(--muted);flex:1}
+.card .meta{margin-top:16px;font-size:12.5px;color:#8b91a5;display:flex;justify-content:space-between;align-items:center}
+.badge{background:#eef7f5;color:#1e8a7d;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px}
+.badge.hot{background:#fff0ed;color:#d8442f}
+
+/* split feature */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.split .art{
+  background:linear-gradient(150deg,#1e2540,#2b3252);border-radius:22px;padding:30px;
+  color:#fff;position:relative;overflow:hidden;
+}
+.split .art::before{
+  content:"";position:absolute;width:180px;height:180px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,182,72,.35),transparent 70%);
+  top:-40px;right:-40px;
+}
+.feature-list{list-style:none;margin-top:22px;display:grid;gap:14px}
+.feature-list li{display:flex;gap:12px;font-size:15px;color:#2c3348}
+.feature-list li .tick{
+  flex:none;width:22px;height:22px;border-radius:50%;background:var(--teal);
+  color:#fff;display:grid;place-items:center;font-size:12px;font-weight:900;margin-top:3px;
+}
+.feature-list strong{color:var(--ink)}
+
+/* hot list */
+.rows{display:grid;gap:12px}
+.row{
+  display:grid;grid-template-columns:44px 1fr auto;gap:16px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;
+  transition:.2s;
+}
+.row:hover{border-color:var(--gold);background:#fffdf8}
+.row .no{font-size:19px;font-weight:900;color:var(--gold);text-align:center}
+.row h4{font-size:15.5px;font-weight:800}
+.row p{font-size:13.5px;color:var(--muted);margin-top:2px}
+.row .time{font-size:12.5px;color:#8b91a5;white-space:nowrap}
+
+/* faq */
+.faq{display:grid;gap:14px;max-width:820px}
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:0 22px;
+}
+details[open]{border-color:#e0d6b8;background:#fffdf6}
+summary{
+  cursor:pointer;font-weight:800;font-size:15.5px;padding:17px 0;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:20px;color:var(--coral);font-weight:400}
+details[open] summary::after{content:"–"}
+details p{font-size:14.5px;color:var(--muted);padding:0 0 18px}
+
+/* footer */
+footer.site{
+  background:var(--ink);color:#a9b1c7;padding:52px 0 30px;margin-top:20px;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.foot-grid h5{color:#fff;font-size:15px;font-weight:800;margin-bottom:14px}
+.foot-grid p{font-size:14px;line-height:1.8}
+.foot-grid ul{list-style:none;display:grid;gap:9px;font-size:14px}
+.foot-grid ul a:hover{color:var(--gold)}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.1);margin-top:38px;padding-top:22px;
+  font-size:13px;color:#7c84a0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+
+@media(max-width:880px){
+  .hero-grid,.split{grid-template-columns:1fr;gap:34px}
+  .hero-art{display:none}
+  .cards{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;gap:28px}
+  .nav ul{display:none}
+  .nav .cta{margin-left:auto}
+  .row{grid-template-columns:34px 1fr;gap:12px}
+  .row .time{grid-column:2;justify-self:start}
+  section{padding:48px 0}
+  .hero{padding:44px 0 54px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="每日乱斗官网 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#ffb648"/>
+        <path d="M32 11l6.4 14.4L54 27l-11.6 10.6L45.6 53 32 44.6 18.4 53l3.2-15.4L10 27l15.6-1.6z" fill="#161b2e"/>
+      </svg>
+      每日乱斗官网
+    </a>
+    <ul>
+      <li><a href="#today">今日看点</a></li>
+      <li><a href="#hot">热点合辑</a></li>
+      <li><a href="#guide">玩法速览</a></li>
+      <li><a href="#faq">常见问答</a></li>
+    </ul>
+    <a class="cta" href="#today">看今日乱斗</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tagline"><span class="dot"></span>每日更新 · 热点速览</span>
+        <h1>每日乱斗官网</h1>
+        <p class="lead">这里是每日乱斗官网的首页入口。每天整理当日乱斗的热点合辑、玩法速览与更新节奏，让你一屏看清今日乱斗有哪些值得关注的内容，不必再到处翻找。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#today">浏览今日看点</a>
+          <a class="btn ghost" href="#hot">查看热点合辑</a>
+        </div>
+        <div class="hero-stats">
+          <div><span>每日</span><small>内容更新节奏</small></div>
+          <div><span>3 大</span><small>速览栏目</small></div>
+          <div><span>1 页</span><small>读懂今日乱斗</small></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="ring" aria-hidden="true"></div>
+        <svg viewBox="0 0 260 260" width="240" height="240" role="img" aria-label="每日乱斗主题插画">
+          <circle cx="130" cy="130" r="104" fill="none" stroke="rgba(255,182,72,.25)" stroke-width="2"/>
+          <circle cx="130" cy="130" r="76" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.12)"/>
+          <path d="M130 62l13 30 33 4-24 22 6 33-28-16-28 16 6-33-24-22 33-4z" fill="#ffb648"/>
+          <circle cx="130" cy="130" r="6" fill="#161b2e"/>
+          <circle cx="58" cy="80" r="9" fill="#ff6b57"/>
+          <circle cx="204" cy="176" r="7" fill="#2fb8a8"/>
+          <circle cx="196" cy="72" r="5" fill="#ffb648"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- TODAY -->
+  <section id="today">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Today</span>
+        <h2>今日乱斗看点</h2>
+        <p>每日乱斗官网把当天的内容拆成三块：先看热点，再看玩法，最后看节奏。下面三张卡片对应三种不同的阅读需求，按兴趣直接进入即可。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ico">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d98a1a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z"/>
+            </svg>
+          </div>
+          <h3>热点合辑</h3>
+          <p>汇总当日乱斗中被反复讨论的片段与话题，按热度排序呈现，方便快速了解大家在聊什么，避免逐条翻找。</p>
+          <div class="meta"><span>阅读约 3 分钟</span><span class="badge hot">热度上升</span></div>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e8a7d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="16" rx="3"/>
+              <path d="M8 9h8M8 13h5"/>
+            </svg>
+          </div>
+          <h3>玩法速览</h3>
+          <p>用简明条目说明每日乱斗的常见玩法结构、上手顺序与注意点，帮助新访问者在一两分钟内建立基本认知。</p>
+          <div class="meta"><span>适合新访客</span><span class="badge">基础向</span></div>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d8442f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v5l3 2"/>
+            </svg>
+          </div>
+          <h3>更新节奏</h3>
+          <p>说明每日乱斗内容的大致更新规律与查看时机，告诉你什么时候来官网最能看到新东西，减少空跑。</p>
+          <div class="meta"><span>每日更新</span><span class="badge">节奏说明</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section id="guide" style="background:#fffdf7;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap split">
+      <div>
+        <div class="sec-head" style="margin-bottom:0">
+          <span class="kicker">Quick Start</span>
+          <h2>每日乱斗怎么快速上手</h2>
+          <p>第一次来到每日乱斗官网，不必从零摸索。按下面的顺序看一遍，就能明白这个页面能提供什么、该从哪里开始。</p>
+        </div>
+        <ul class="feature-list">
+          <li><span class="tick">1</span><div><strong>先看今日看点</strong>：三张卡片对应热点、玩法与节奏，选自己最关心的一块进入。</div></li>
+          <li><span class="tick">2</span><div><strong>再翻热点合辑</strong>：列表按呈现顺序排列，标题与摘要已足够判断是否值得展开。</div></li>
+          <li><span class="tick">3</span><div><strong>最后看常见问答</strong>：关于更新频率、内容范围的高频问题集中在这里回答。</div></li>
+        </ul>
+      </div>
+      <div class="art">
+        <h3 style="font-size:19px;font-weight:800;margin-bottom:14px;position:relative">每日乱斗内容结构</h3>
+        <svg viewBox="0 0 320 200" width="100%" height="auto" role="img" aria-label="每日乱斗内容结构示意">
+          <rect x="10" y="20" width="140" height="40" rx="10" fill="rgba(255,182,72,.9)"/>
+          <text x="80" y="45" text-anchor="middle" font-size="14" fill="#1a1408" font-weight="700">热点合辑</text>
+          <rect x="170" y="20" width="140" height="40" rx="10" fill="rgba(47,184,168,.85)"/>
+          <text x="240" y="45" text-anchor="middle" font-size="14" fill="#0d2b27" font-weight="700">玩法速览</text>
+          <rect x="10" y="80" width="140" height="40" rx="10" fill="rgba(255,107,87,.85)"/>
+          <text x="80" y="105" text-anchor="middle" font-size="14" fill="#2b0f0a" font-weight="700">更新节奏</text>
+          <rect x="170" y="80" width="140" height="40" rx="10" fill="rgba(255,255,255,.16)"/>
+          <text x="240" y="105" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">常见问答</text>
+          <path d="M80 60v20M240 60v20" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-dasharray="4 4"/>
+          <rect x="10" y="140" width="300" height="42" rx="10" fill="rgba(255,255,255,.08)" stroke="rgba(255,182,72,.5)"/>
+          <text x="160" y="167" text-anchor="middle" font-size="14" fill="#ffb648" font-weight="700">每日乱斗官网 · 一页看清今日内容</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOT -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Hot List</span>
+        <h2>每日乱斗热点合辑</h2>
+        <p>下列条目按合辑的呈现顺序排列，每条配一句摘要说明看点所在。每日乱斗官网只做归类与速览，具体内容以对应条目为准。</p>
+      </div>
+      <div class="rows">
+        <a class="row" href="#hot">
+          <span class="no">01</span>
+          <div><h4>当日高讨论片段汇总</h4><p>把当天被提及最多的几个片段放在一起，便于横向对比，不必来回切换页面。</p></div>
+          <span class="time">今日 · 热点</span>
+        </a>
+        <a class="row" href="#hot">
+          <span class="no">02</span>
+          <div><h4>玩法侧的新变化记录</h4><p>记录每日乱斗玩法层面出现的新说法与新理解，标注出现时间，方便回看。</p></div>
+          <span class="time">今日 · 玩法</span>
+        </a>
+        <a class="row" href="#hot">
+          <span class="no">03</span>
+          <div><h4>新手常问问题的集中回答</h4><p>把重复出现的问题合并成条目，减少翻阅成本，答案保持简短直接。</p></div>
+          <span class="time">今日 · 问答</span>
+        </a>
+        <a class="row" href="#hot">
+          <span class="no">04</span>
+          <div><h4>更新时段与查看建议</h4><p>说明一天中较容易看到新内容的时段，以及不同时间来访时的预期差异。</p></div>
+          <span class="time">今日 · 节奏</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background:#fffdf7;border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">FAQ</span>
+        <h2>关于每日乱斗官网的常见问题</h2>
+        <p>下面四个问题覆盖了大多数访问者最初会关心的地方，答案尽量简短，读完即可决定下一步看哪里。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>每日乱斗官网主要提供什么内容？</summary>
+          <p>每日乱斗官网以首页形式汇总当日乱斗的热点合辑、玩法速览与更新节奏，并提供常见问题解答。页面定位是速览与入口，帮助访问者快速判断当天有哪些内容值得关注。</p>
+        </details>
+        <details>
+          <summary>内容多久更新一次？</summary>
+          <p>站点按每日更新的节奏组织内容，首页栏目围绕“今日”展开。具体条目的数量与呈现顺序会随当天情况调整，因此不同日期来访看到的合辑可能不同。</p>
+        </details>
+        <details>
+          <summary>第一次来应该从哪里看起？</summary>
+          <p>建议从今日看点开始，三张卡片分别对应热点、玩法与节奏；如果已经熟悉基本概念，可直接进入热点合辑列表，按摘要挑感兴趣的条目。</p>
+        </details>
+        <details>
+          <summary>页面上的下载入口现在能直接使用吗？</summary>
+          <p>下载入口目前处于占位状态，按钮保持禁用，尚不指向实际文件。后续替换为真实地址后即可正常使用，届时页面会同步更新入口状态。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h5>每日乱斗官网</h5>
+        <p>每日乱斗官网是围绕每日乱斗内容组织的主题首页，提供热点合辑、玩法速览与更新节奏说明，帮助访问者用更短的时间掌握当日看点。</p>
+      </div>
+      <div>
+        <h5>站内导航</h5>
+        <ul>
+          <li><a href="#today">今日看点</a></li>
+          <li><a href="#hot">热点合辑</a></li>
+          <li><a href="#guide">玩法速览</a></li>
+          <li><a href="#faq">常见问答</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>资源入口</h5>
+        <ul>
+          <li>
+            <a href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none;opacity:.7">下载（即将开放）</a>
+          </li>
+          <li><a href="#top">返回顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 每日乱斗官网 · 内容以每日更新速览为主</span>
+      <span>每日乱斗官网 · 热点合辑与玩法速览</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
